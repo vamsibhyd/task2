@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Profile Scraper",
+  "version": "1.0",
+  "permissions": ["tabs", "scripting", "activeTab", "storage"],
+  "host_permissions": ["https://*.linkedin.com/*", "http://localhost:3000/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+  {
+    "resources": ["urls.json"],
+    "matches": ["<all_urls>"]
+  }
+],"content_scripts": [
+  {
+    "matches": ["*://www.linkedin.com/in/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }
+]
+}

@@ -21,12 +21,12 @@
   ],
   "content_scripts": [
     {
-      "matches": ["://www.linkedin.com/in/"],
+      "matches": ["https://www.linkedin.com/in/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     },
     {
-      "matches": ["://www.linkedin.com/feed/"],
+      "matches": ["https://www.linkedin.com/feed/*"],
       "js": ["content.js"],
       "run_at": "document_idle"
     }

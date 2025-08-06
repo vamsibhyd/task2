@@ -4,8 +4,20 @@
     <title>Scrape Profiles</title>
   </head>
   <body>
-    <h3>LinkedIn Scraper</h3>
-    <button id="start">Start Scraping</button>
+<h3>LinkedIn Auto Tool</h3>
+
+  <button id="scrapeBtn">Scrape LinkedIn Profiles</button>
+
+  <hr>
+
+  <label for="likeCount">Like Count:</label>
+  <input type="number" id="likeCount" min="0" placeholder="e.g., 5">
+
+  <label for="commentCount">Comment Count:</label>
+  <input type="number" id="commentCount" min="0" placeholder="e.g., 3">
+
+  <button id="reactBtn" disabled>Start Feed Interaction</button>
+
     <script src="popup.js"></script>
   </body>
 </html>

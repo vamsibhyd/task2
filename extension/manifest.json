@@ -1,9 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "LinkedIn Profile Scraper",
+  "name": "LinkedIn Profile Scraper & Reactor",
   "version": "1.0",
   "permissions": ["tabs", "scripting", "activeTab", "storage"],
-  "host_permissions": ["https://*.linkedin.com/*", "http://localhost:3000/*"],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "http://localhost:3000/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
@@ -11,15 +14,21 @@
     "default_popup": "popup.html"
   },
   "web_accessible_resources": [
-  {
-    "resources": ["urls.json"],
-    "matches": ["<all_urls>"]
-  }
-],"content_scripts": [
-  {
-    "matches": ["*://www.linkedin.com/in/*"],
-    "js": ["content.js"],
-    "run_at": "document_idle"
-  }
-]
+    {
+      "resources": ["urls.json"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["://www.linkedin.com/in/"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["://www.linkedin.com/feed/"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }

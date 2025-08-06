@@ -74,7 +74,7 @@ async function startFeedInteraction(likeCount, commentCount) {
   // Perform Likes
   for (let i = 0; i < Math.min(likeCount, likeButtons.length); i++) {
     likeButtons[i].click();
-    console.log(`👍 Liked post #${i + 1}`);
+    console.log(` Liked post #${i + 1}`);
     await sleep(1000 + Math.random() * 1000);
   }
 
